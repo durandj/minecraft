@@ -15,9 +15,9 @@ class Mod(django_models.Model):
 	version = django_models.CharField(max_length = 64)
 
 	created_by     = django_models.ForeignKey(auth_models.User, related_name = 'mod_created_by')
-	created_on     = django_models.DateTimeField(auto_now = True)
-	last_edited_by = django_models.ForeignKey(auth_models.User)
-	last_edited_on = django_models.DateTimeField(null = True)
+	created_on     = django_models.DateTimeField(auto_now_add = True)
+	last_edited_by = django_models.ForeignKey(auth_models.User, null = True)
+	last_edited_on = django_models.DateTimeField(auto_now = True, null = True)
 
 class Modpack(django_models.Model):
 	"""
@@ -28,9 +28,9 @@ class Modpack(django_models.Model):
 	url  = django_models.URLField()
 
 	created_by     = django_models.ForeignKey(auth_models.User, related_name = 'modpack_created_by')
-	created_on     = django_models.DateTimeField(auto_now = True)
-	last_edited_by = django_models.ForeignKey(auth_models.User)
-	last_edited_on = django_models.DateTimeField(null = True)
+	created_on     = django_models.DateTimeField(auto_now_add = True)
+	last_edited_by = django_models.ForeignKey(auth_models.User, null = True)
+	last_edited_on = django_models.DateTimeField(auto_now = True, null = True)
 
 class ModpackMod(django_models.Model):
 	"""
@@ -41,9 +41,9 @@ class ModpackMod(django_models.Model):
 	modpack = django_models.ForeignKey(Modpack)
 
 	created_by     = django_models.ForeignKey(auth_models.User, related_name = 'modpack_mod_created_by')
-	created_on     = django_models.DateTimeField(auto_now = True)
-	last_edited_by = django_models.ForeignKey(auth_models.User)
-	last_edited_on = django_models.DateTimeField(null = True)
+	created_on     = django_models.DateTimeField(auto_now_add = True)
+	last_edited_by = django_models.ForeignKey(auth_models.User, null = True)
+	last_edited_on = django_models.DateTimeField(auto_now = True, null = True)
 
 class Link(django_models.Model):
 	"""
