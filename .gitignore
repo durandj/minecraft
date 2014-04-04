@@ -1,0 +1,8 @@
+*.swp
+*.swo
+*.pyc
+
+/db.sqlite
+/static
+/tags
+
