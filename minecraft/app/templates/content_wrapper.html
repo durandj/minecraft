@@ -1,0 +1,51 @@
+{% extends 'page_wrapper.html' %}
+
+{% load staticfiles %}
+
+{% block styles %}
+	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+	{% block content_styles %}{% endblock %}
+{% endblock %}
+
+{% block header %}
+	<h1>Avalon Minecraft</h1>
+
+	<nav>
+		<ul>
+			{% for link in links %}
+			<li>
+				<a href="{{ link.url }}">{{ link.name }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<div id="login">
+			{% if user.is_authenticated %}
+			<span>{{ user.username }}</span>
+			<a href="#logout">(logout)</a> <!-- TODO: logout -->
+			{% else %}
+			<a href="#login">Login</a>
+			{% endif %}
+		</div>
+	</nav>
+{% endblock %}
+
+{% block page %}
+	<h1>It Works!</h1>
+{% endblock %}
+
+{% block footer %}
+	<ul>
+		<li>
+			<a href="https://github.com/durandj/minecraft.git">Source</a>
+		</li>
+	</ul>
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" href="{% static 'js/jquery-1.11.0.min.js' %}" ></script>
+
+	{% block content_scripts %}{% endblock %}
+{% endblock %}
+

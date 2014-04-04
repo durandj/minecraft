@@ -1,0 +1,53 @@
+h1
+{
+	margin: 0.5em;
+}
+
+nav
+{
+	background-color: #CCCCCC;
+	border-bottom: 1px solid #AAAAAA;
+	padding: 0.3em 1em;
+}
+
+nav ul
+{
+	display: inline-block;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+nav ul li
+{
+	display: inline-block;
+}
+
+nav ul li a
+{
+	display: block;
+}
+
+nav div#login
+{
+	float: right;
+}
+
+footer ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+footer ul li
+{
+	display: inline-block;
+}
+
+footer ul li a
+{
+	display: block;
+}
+

@@ -1,7 +1,14 @@
-from django.conf.urls import patterns, include, url
+"""
+Minecraft site URLs
+"""
+
+# pylint: disable=E1120
+
+from django.conf.urls import patterns, url
+
+from minecraft.app import views as minecraft_views
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'minecraft.views.home', name='home'),
-    # url(r'^minecraft/', include('minecraft.foo.urls')),
+	url(r'^$', minecraft_views.HomeView.as_view(), name = 'home'),
 )
+
