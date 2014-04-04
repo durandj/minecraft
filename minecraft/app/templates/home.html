@@ -1,2 +1,29 @@
 {% extends 'content_wrapper.html' %}
 
+{% block page %}
+	<h2>About</h2>
+	<p>
+		I do a bit of Minecraft server administration and have worked with some friends to create different modpacks. I decided to document them here and give notifications about changes to them. Note most of the mods are not made by us and links to the mod page or mod maker are provided.
+	</p>
+
+	<h2>Updated Mods</h2>
+	<ul id="mod-updates">
+		{% for update in mod_updates %}
+		<li>
+			<span class="update-name">{{ update.name }}</span>
+			<span class="update-date">{{ update.last_edited_on }}</span>
+		</li>
+		{% endfor %}
+	</ul>
+
+	<h2>Updated Modpacks</h2>
+	<ul id="modpack-updates">
+		{% for update in modpack_updates %}
+		<li>
+			<span class="update-name">{{ update.name }}</span>
+			<span class="update-date">{{ update.last_edited_on }}</span>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
