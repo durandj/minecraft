@@ -14,9 +14,11 @@ class Mod(django_models.Model):
 	url     = django_models.URLField()
 	version = django_models.CharField(max_length = 64)
 
-	created_by     = django_models.ForeignKey(auth_models.User, related_name = 'mod_created_by')
+	created_by     = django_models.ForeignKey(
+			auth_models.User, related_name = 'created_mods')
 	created_on     = django_models.DateTimeField(auto_now_add = True)
-	last_edited_by = django_models.ForeignKey(auth_models.User, null = True)
+	last_edited_by = django_models.ForeignKey(
+			auth_models.User, null = True, related_name = 'edited_mods')
 	last_edited_on = django_models.DateTimeField(auto_now = True, null = True)
 
 class Modpack(django_models.Model):
@@ -27,9 +29,11 @@ class Modpack(django_models.Model):
 	name = django_models.CharField(max_length = 256, unique = True)
 	url  = django_models.URLField()
 
-	created_by     = django_models.ForeignKey(auth_models.User, related_name = 'modpack_created_by')
+	created_by     = django_models.ForeignKey(
+			auth_models.User, related_name = 'created_modpacks')
 	created_on     = django_models.DateTimeField(auto_now_add = True)
-	last_edited_by = django_models.ForeignKey(auth_models.User, null = True)
+	last_edited_by = django_models.ForeignKey(
+			auth_models.User, null = True, related_name = 'edited_modpacks')
 	last_edited_on = django_models.DateTimeField(auto_now = True, null = True)
 
 class ModpackMod(django_models.Model):
@@ -38,11 +42,13 @@ class ModpackMod(django_models.Model):
 	"""
 
 	mod     = django_models.ForeignKey(Mod)
-	modpack = django_models.ForeignKey(Modpack)
+	modpack = django_models.ForeignKey(Modpack, related_name = 'mods')
 
-	created_by     = django_models.ForeignKey(auth_models.User, related_name = 'modpack_mod_created_by')
+	created_by     = django_models.ForeignKey(
+			auth_models.User, related_name = 'created_modpack_mod')
 	created_on     = django_models.DateTimeField(auto_now_add = True)
-	last_edited_by = django_models.ForeignKey(auth_models.User, null = True)
+	last_edited_by = django_models.ForeignKey(
+			auth_models.User, null = True, related_name = 'edited_modpackmods')
 	last_edited_on = django_models.DateTimeField(auto_now = True, null = True)
 
 class Link(django_models.Model):
