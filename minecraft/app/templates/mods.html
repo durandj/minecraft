@@ -13,7 +13,9 @@
 			<li>
 				<div class="header">
 					<span class="name"><a href="{% url 'mods' %}/{{ mod.id }}">{{ mod.name }}</a></span>
+					{% if mod.version %}
 					<span class="version">version {{ mod.version }}</span>
+					{% endif %}
 				</div>
 				<div class="description">
 					<p>{{ mod.description }}</p>
