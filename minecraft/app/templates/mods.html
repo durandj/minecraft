@@ -1,0 +1,26 @@
+{% extends 'content_wrapper.html' %}
+
+{% load staticfiles %}
+
+{% block content_styles %}
+	<link rel="stylesheet" href="{% static 'css/mods.css' %}" />
+{% endblock %}
+
+{% block page %}
+	<div id="mods-wrapper">
+		<ul id="mods">
+			{% for mod in mods %}
+			<li>
+				<div class="header">
+					<span class="name"><a href="{% url 'mods' %}/{{ mod.id }}">{{ mod.name }}</a></span>
+					<span class="version">version {{ mod.version }}</span>
+				</div>
+				<div class="description">
+					<p>{{ mod.description }}</p>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,44 @@
+div#mods-wrapper
+{
+	text-align: center;
+}
+
+ul#mods
+{
+	display: inline-block;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+}
+
+ul#mods li
+{
+	border: 1px solid #AAAAAA;
+	min-width: 750px;
+}
+
+ul#mods li div.header
+{
+	background-color: #CCCCCC;
+	border-bottom: 1px solid #AAAAAA;
+	padding: 1em;
+}
+
+ul#mods li div.header span.name
+{
+	font-weight: bold;
+}
+
+ul#mods li div.header span.version
+{
+	float: right;
+	position: relative;
+	top: 2px;
+}
+
+ul#mods li div.description
+{
+	padding: 0.5em 1em;
+}
+

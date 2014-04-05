@@ -12,3 +12,8 @@ body
 	padding: 0px;
 }
 
+div#page
+{
+	padding: 2em;
+}
+

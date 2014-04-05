@@ -25,3 +25,12 @@ class HomeView(django_views.TemplateView):
 
 		return super(HomeView, self).get_context_data(**context)
 
+class ModsView(django_views.ListView):
+	"""
+	The mods view
+	"""
+
+	context_object_name = 'mods'
+	model               = minecraft_models.Mod
+	template_name       = 'mods.html'
+
