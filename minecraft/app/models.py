@@ -10,9 +10,10 @@ class Mod(django_models.Model):
 	A Minecraft modification.
 	"""
 
-	name    = django_models.CharField(max_length = 256, unique = True)
-	url     = django_models.URLField()
-	version = django_models.CharField(max_length = 64)
+	name        = django_models.CharField(max_length = 256, unique = True)
+	description = django_models.CharField(max_length = 1024)
+	url         = django_models.URLField()
+	version     = django_models.CharField(max_length = 64)
 
 	created_by     = django_models.ForeignKey(
 			auth_models.User, related_name = 'created_mods')
@@ -26,8 +27,9 @@ class Modpack(django_models.Model):
 	A modpack is a collection of mods.
 	"""
 
-	name = django_models.CharField(max_length = 256, unique = True)
-	url  = django_models.URLField()
+	name        = django_models.CharField(max_length = 256, unique = True)
+	description = django_models.CharField(max_length = 1024)
+	url         = django_models.URLField()
 
 	created_by     = django_models.ForeignKey(
 			auth_models.User, related_name = 'created_modpacks')
