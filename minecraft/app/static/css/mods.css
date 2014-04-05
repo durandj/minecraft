@@ -18,6 +18,11 @@ ul#mods li
 	min-width: 750px;
 }
 
+ul#mods li:not(:last-child)
+{
+	margin-bottom: 1em;
+}
+
 ul#mods li div.header
 {
 	background-color: #CCCCCC;
