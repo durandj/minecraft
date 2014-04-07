@@ -60,6 +60,11 @@ nav div#login form input
 	top: -1px;
 }
 
+footer
+{
+	padding-bottom: 1em;
+}
+
 footer ul
 {
 	list-style: none;
