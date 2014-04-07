@@ -1,0 +1,57 @@
+div#modpacks-wrapper
+{
+	text-align: center;
+}
+
+ul#modpacks
+{
+	display: inline-block;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+}
+
+ul#modpacks li.modpack
+{
+	border: 1px solid #CCCCCC;
+	min-width: 750px;
+}
+
+ul#modpacks li.modpack div.header
+{
+}
+
+ul#modpacks li.modpack div.description
+{
+	padding: 1em;
+}
+
+ul#modpacks li.modpack div.description p
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul#modpacks li.modpack label
+{
+	padding: 0.5em 1em;
+}
+
+ul#modpacks li.modpack div.mods
+{
+	padding: 0.5em 2em 1em;
+}
+
+ul#modpacks li.modpack div.mods ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul#modpacks li.modpack div.mods ul li:not(:last-child)
+{
+	padding-bottom: 0.25em;
+}
+

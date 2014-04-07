@@ -25,9 +25,6 @@ ul#mods li:not(:last-child)
 
 ul#mods li div.header
 {
-	background-color: #CCCCCC;
-	border-bottom: 1px solid #AAAAAA;
-	padding: 1em;
 }
 
 ul#mods li div.header span.name

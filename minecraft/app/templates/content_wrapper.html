@@ -20,7 +20,7 @@
 				<a href="{% url 'mods' %}">Mods</a>
 			</li>
 			<li>
-				<a href="#modpacks">Modpacks</a>
+				<a href="{% url 'modpacks' %}">Modpacks</a>
 			</li>
 
 			{% for link in links %}
@@ -54,7 +54,7 @@
 {% endblock %}
 
 {% block scripts %}
-	<script type="text/javascript" href="{% static 'js/jquery-1.11.0.min.js' %}" ></script>
+	<script type="text/javascript" src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
 
 	{% block content_scripts %}{% endblock %}
 {% endblock %}
