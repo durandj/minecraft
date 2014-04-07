@@ -1,0 +1,79 @@
+html, body, div#page
+{
+	box-sizing: border-box;
+	height: 100%;
+}
+
+div#login_wrapper
+{
+	margin-top: -76px;
+	position: relative;
+	text-align: center;
+	top: 50%;
+}
+
+form
+{
+	clear: both;
+	display: inline-block;
+	text-align: left;
+}
+
+form fieldset
+{
+	border: 1px solid #CCCCCC;
+	background-color: #AAAAAA;
+}
+
+form fieldset legend
+{
+	border: 1px solid #CCCCCC;
+	background-color: #BBBBBB;
+	font-weight: bold;
+	left: 0.5em;
+	padding: 0.2em 0.3em;
+	position: relative;
+}
+
+form fieldset div:not(:last-child)
+{
+	padding-bottom: 0.5em;
+}
+
+form fieldset div label
+{
+	display: inline-block;
+	float: left;
+	font-size: 0.9em;
+	font-weight: bold;
+	position: relative;
+	text-align: left;
+	top: 0.5em;
+	width: 5em;
+}
+
+form fieldset div input
+{
+	background-color: #CCCCCC;
+	border: 1px solid #999999;
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 0.3em;
+	width: 18em;
+}
+
+form fieldset input[type="submit"]
+{
+	background-color: #CCCCCC;
+	border: 1px solid #999999;
+	float: right;
+	padding: 0.3em 0.6em;
+}
+
+form fieldset input[type="submit"]:hover
+{
+	background-color: #999999;
+	border-color: #CCCCCC;
+	cursor: pointer;
+}
+

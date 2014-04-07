@@ -33,9 +33,12 @@
 		<div id="login">
 			{% if user.is_authenticated %}
 			<span>{{ user.username }}</span>
-			<a href="#logout">(logout)</a> <!-- TODO: logout -->
+			<form method="POST" action="{% url 'logout' %}">
+				{% csrf_token %}
+				<input type="submit" value="(logout)" />
+			</form>
 			{% else %}
-			<a href="#login">Login</a>
+			<a href="{% url 'login' %}">Login</a>
 			{% endif %}
 		</div>
 	</nav>

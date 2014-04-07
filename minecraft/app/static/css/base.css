@@ -32,6 +32,32 @@ nav ul li a
 nav div#login
 {
 	float: right;
+	position: relative;
+	top: 4px;
+}
+
+nav div#login span
+{
+	text-transform: capitalize;
+}
+
+nav div#login form
+{
+	display: inline;
+}
+
+nav div#login form input
+{
+	background-color: transparent;
+	border: none;
+	color: blue;
+	cursor: pointer;
+	font-size: 0.9em;
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	text-decoration: underline;
+	top: -1px;
 }
 
 footer ul

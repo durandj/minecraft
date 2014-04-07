@@ -2,6 +2,9 @@
 Minecraft app views
 """
 
+from django import shortcuts as django_shortcuts
+from django.contrib import auth as django_auth
+from django.core import urlresolvers as django_urlresolvers
 from django.views import generic as django_views
 
 from minecraft.app import models as minecraft_models
@@ -42,4 +45,45 @@ class ModpacksView(django_views.ListView):
 	context_object_name = 'modpacks'
 	model               = minecraft_models.Modpack
 	template_name       = 'modpacks.html'
+
+class LoginView(django_views.TemplateView):
+	"""
+	The login view
+	"""
+
+	template_name = 'login.html'
+
+	def post(self, request, *args, **kwargs):
+		"""
+		Handle login attempt
+		"""
+
+		username = request.POST['username']
+		password = request.POST['password']
+
+		next = request.POST['next'] if 'next' in request.POST else django_urlresolvers.reverse('home')
+
+		user = django_auth.authenticate(username = username, password = password)
+		if user is not None:
+			if user.is_active:
+				django_auth.login(request, user)
+				return django_shortcuts.redirect(next)
+			else:
+				return None # TODO: login error
+		else:
+			return None # TODO: login error
+
+class LogoutView(django_views.View):
+	"""
+	The logout view
+	"""
+
+	def post(self, request, *args, **kwargs):
+		"""
+		Handle logout attempt
+		"""
+
+		home_url = django_urlresolvers.reverse('home')
+		django_auth.logout(request)
+		return django_shortcuts.redirect(home_url)
 

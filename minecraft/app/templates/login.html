@@ -1,0 +1,30 @@
+{% extends 'page_wrapper.html' %}
+
+{% load staticfiles %}
+
+{% block styles %}
+	<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+{% block page %}
+	<div id="login_wrapper">
+		<form method="POST" action="{% url 'login' %}">
+			{% csrf_token %}
+
+			<fieldset>
+				<legend>Login</legend>
+				<div>
+					<label for="username">Username</label>
+					<input name="username" type="text" placeholder="Username" required="required" />
+				</div>
+				<div>
+					<label for="password">Password</label>
+					<input name="password" type="password" placeholder="Password" required="required" />
+				</div>
+
+				<input type="submit" value="Login" />
+			</fieldset>
+		</form>
+	</div>
+{% endblock %}
+
