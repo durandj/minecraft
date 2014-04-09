@@ -37,6 +37,15 @@ class ModsView(django_views.ListView):
 	model               = minecraft_models.Mod
 	template_name       = 'mods.html'
 
+class ModView(django_views.DetailView):
+	"""
+	The mod detail view
+	"""
+
+	context_object_name = 'mod'
+	model               = minecraft_models.Mod
+	template_name       = 'mod.html'
+
 class ModpacksView(django_views.ListView):
 	"""
 	The modpacks view
@@ -45,6 +54,15 @@ class ModpacksView(django_views.ListView):
 	context_object_name = 'modpacks'
 	model               = minecraft_models.Modpack
 	template_name       = 'modpacks.html'
+
+class ModpackView(django_views.DetailView):
+	"""
+	The modpack detail view
+	"""
+
+	context_object_name = 'modpack'
+	model               = minecraft_models.Modpack
+	template_name       = 'modpack.html'
 
 class LoginView(django_views.TemplateView):
 	"""

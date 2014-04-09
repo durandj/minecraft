@@ -1,0 +1,51 @@
+div#mod
+{
+	border: 1px solid #CCCCCC;
+	margin: 0px auto;
+	width: 750px;
+}
+
+div#mod div.header span.name
+{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+div#mod div.info
+{
+	padding: 1em;
+}
+
+div#mod div.info div
+{
+	padding: 0.5em 0px;
+}
+
+div#mod div.info div:first-child
+{
+	padding-top: 0px;
+}
+
+div#mod div.info div:not(:last-child)
+{
+	border-bottom: 1px solid #CCCCCC;
+}
+
+div#mod div.info div:last-child
+{
+	padding-bottom: 0px;
+}
+
+div#mod div.info div label
+{
+	display: inline-block;
+	text-align: left;
+	width: 7em;
+}
+
+div#mod div.info div span, div#mod div.info div p
+{
+	display: inline-block;
+	padding: 0.25em;
+}
+

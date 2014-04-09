@@ -1,0 +1,51 @@
+{% extends 'content_wrapper.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ modpack.name }}{% endblock %}
+
+{% block content_styles %}
+	<link rel="stylesheet" href="{% static 'css/modpack.css' %}" />
+{% endblock %}
+
+{% block page %}
+	<div id="modpack">
+		<div class="header">
+			<span class="name">{{ modpack.name }}</span>
+		</div>
+		<div class="info">
+			<div>
+				<label>URL</label>
+				<span><a href="{{ modpack.url }}">{{ modpack.url }}</a></span>
+			</div>
+			<div>
+				<label>Date Added</label>
+				<span>{{ modpack.created_on }}</span>
+			</div>
+			<div>
+				<label>Date Created</label>
+				<span>{{ modpack.last_edited_on }}</span>
+			</div>
+			<div>
+				<label>Description</label>
+				<p>{{ modpack.description }}</p>
+			</div>
+			<div>
+				<label>Mods</label>
+				<ul>
+					{% for mod in modpack.mods.all %}
+					<li>
+						<div class="header">
+							<span class="name"><a href="{% url 'mod' mod.id %}">{{ mod.name }}</a></span>
+						</div>
+						<div class="description">
+							<p>{{ mod.description }}</p>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

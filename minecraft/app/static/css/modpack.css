@@ -1,0 +1,68 @@
+div#modpack
+{
+	border: 1px solid #CCCCCC;
+	margin: 0px auto;
+	width: 750px;
+}
+
+div#modpack div.header span.name, div#modpack div.info div ul li div.header span.name
+{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+div#modpack div.info
+{
+	padding: 1em;
+}
+
+div#modpack div.info > div
+{
+	padding: 0.5em 0px;
+}
+
+div#modpack div.info > div:first-child
+{
+	padding-top: 0px;
+}
+
+div#modpack div.info > div:not(:last-child)
+{
+	border-bottom: 1px solid #CCCCCC;
+}
+
+div#modpack div.info > div:last-child
+{
+	padding-bottom: 0px;
+}
+
+div#modpack div.info div label
+{
+	display: inline-block;
+	text-align: left;
+	width: 7em;
+}
+
+div#modpack div.info div span, div#modpack div.info div p
+{
+	display: inline-block;
+	padding: 0.25em;
+}
+
+div#modpack div.info div ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0.5em 0.5em 0px;
+}
+
+div#modpack div.info div ul li:not(:last-child)
+{
+	padding-bottom: 0.25em;
+}
+
+div#modpack div.info div ul li p
+{
+	margin: 0px;
+}
+

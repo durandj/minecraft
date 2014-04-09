@@ -1,0 +1,40 @@
+{% extends 'content_wrapper.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ mod.name }}{% endblock %}
+
+{% block content_styles %}
+	<link rel="stylesheet" href="{% static 'css/mod.css' %}" />
+{% endblock %}
+
+{% block page %}
+	<div id="mod">
+		<div class="header">
+			<span class="name">{{ mod.name }}</span>
+		</div>
+		<div class="info">
+			<div>
+				<label>Version</label>
+				<span>{{ mod.version }}</span>
+			</div>
+			<div>
+				<label>Date Added</label>
+				<span>{{ mod.created_on }}</span>
+			</div>
+			<div>
+				<label>Date Modified</label>
+				<span>{{ mod.last_edited_on }}</span>
+			</div>
+			<div>
+				<label>URL</label>
+				<span><a href="{{ mod.url }}">{{ mod.url }}</a></span>
+			</div>
+			<div>
+				<label>Description</label>
+				<p>{{ mod.description }} </p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
